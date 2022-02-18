@@ -1,0 +1,61 @@
+#config.yaml
+---
+dstconf: "samples/dstconf" #prod file
+srcconf: "samples/srcconf" #lab file
+swapheaders: True                                               #:optional
+verbose:                                                        #:optional
+Capture: #Add FGT config context sections below
+  #Start = config section context. Ex: "config router static"   :required
+  #Stop = "next or end"                                         :required
+  #wipe = "y"                                                   :optional
+  #SectionOrVdom = {header|config_global|<vdom_name>}           :required
+  -
+    Start: edit "mgmt1"
+    Stop: next
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: edit "mgmt2"
+    Stop: next
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: config system central-management
+    Stop: end
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: config system admin
+    Stop: end
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: config system accprofile
+    Stop: end
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: config system ha
+    Stop: end
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: config system password-policy
+    Stop: end
+    Wipe:
+    SectionOrVdom: config_global
+  -
+    Start: config firewall local-in-policy
+    Stop: end
+    Wipe: y
+    SectionOrVdom: root
+  -
+    Start: config system link-monitor
+    Stop: end
+    Wipe: y
+    SectionOrVdom: untrust
+  -
+    Start: config router static
+    Stop: end
+    Wipe:
+    SectionOrVdom: root
