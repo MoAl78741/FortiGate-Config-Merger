@@ -3,11 +3,11 @@
 
 Merges specific sections of one FortiGate config file into another FortiGate config file.
 
-##Purpose
+## Purpose
 
 This can be useful tool for adapting prod configs to a lab environment for testing.
 
-##What the app does:
+## What the app does:
 
 - Parses command lines arguments and YAML config file. CLI args overwrite YAML args.
 - Splits configuration into dictionaries.
