@@ -22,19 +22,7 @@ log_msg = logging.getLogger("priLogger")
 def yaml_values(config_file) -> dict:
     """Open YAML and assign var cfg to file
     :param config_file: path of yaml file
-    :return {'dstconf': 'dstconf',
-        'srcconf': 'srcconf',
-        'swapheaders': None,
-        'Capture': [{'Start': 'edit "mgmt1"', 'Stop': 'next', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'edit "mgmt2"', 'Stop': 'next', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'config system central-management', 'Stop': 'end', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'config system admin', 'Stop': 'end', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'config system accprofile', 'Stop': 'end', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'config system ha', 'Stop': 'end', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'config system password-policy', 'Stop': 'end', 'Wipe': None, 'SectionOrVdom': 'config_global'},
-        {'Start': 'config firewall local-in-policy', 'Stop': 'end', 'Wipe': 'y', 'SectionOrVdom': 'root'},
-        {'Start': 'config system link-monitor', 'Stop': 'end', 'Wipe': 'y', 'SectionOrVdom': 'untrust'},
-        {'Start': 'config router static', 'Stop': 'end', 'Wipe': None, 'SectionOrVdom': 'root'}]}
+    :return yaml dictionary
     """
     try:
         with open(config_file, mode="rt") as yfile:
