@@ -3,7 +3,6 @@
 dstconf: "samples/dstconf" #prod file
 srcconf: "samples/srcconf" #lab file
 swapheaders: True                                               #:optional
-verbose:                                                        #:optional
 Capture: #Add FGT config context sections below
   #Start = config section context. Ex: "config router static"   :required
   #Stop = "next or end"                                         :required
