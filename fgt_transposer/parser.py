@@ -145,10 +145,8 @@ class Parser:
                 log_msg.warning(
                     f"Section not found: {start=}, {stop=}"
                 )
-
             if replacement_results:
                 newfile[sectionorvdom][0] = replacement_results
-
             if self.swapheaders:
                 newfile["header"] = self.vdoms_dict_results["srcfile"]["header"]
         self.vdoms_dict_results.update({"newfile": newfile})
