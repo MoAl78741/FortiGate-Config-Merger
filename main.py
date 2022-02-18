@@ -18,8 +18,6 @@ makedirs("_backups/", exist_ok=True)
 logging.config.dictConfig(logging_schema)
 log_msg = logging.getLogger("priLogger")
 
-config_file = "config.yaml"
-
 
 def yaml_values(config_file) -> dict:
     """Open YAML and assign var cfg to file
