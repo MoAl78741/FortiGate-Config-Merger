@@ -42,8 +42,6 @@ def argument_parser():
     parser.add_argument("--dstconf", help="dst config file location.")
     parser.add_argument("--srcconf", help="src config file location.")
     parser.add_argument("--swapheaders", action="store_true")
-    parser.add_argument("--logfile", help="Log file location.")
-    parser.add_argument("-v", "--verbose", action="store_true")
     return parser.parse_args()
 
 
