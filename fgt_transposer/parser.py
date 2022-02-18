@@ -69,7 +69,6 @@ class Parser:
         self.vdoms_dict_results[filename].update(dictdata)
 
     def grab_regex_value(self, parameter, filedata, full_vdom_name=None):
-
         if full_vdom_name:
             parameter = {parameter: True, "full_vdom_name": full_vdom_name}
         else:
@@ -115,27 +114,21 @@ class Parser:
         dstfile = two_file_dict["dstfile"]
         srcfile = two_file_dict["srcfile"]
         newfile = deepcopy(dstfile)
-
         for far in arguments:
             log_msg.debug(f"Searching for: {far}")
             start = far.get("Start")
             stop = far.get("Stop")
             wipe = far.get("Wipe")
             sectionorvdom = far.get("SectionOrVdom")
-
             if not sectionorvdom:
                 raise SectionOrVdomException(f"No SectionOrVdom given for {start} / {stop}")
-
             if start is not None and stop is not None and "end" in stop:
                 regex_query = self.regex_storage(yamlend=True, start=start, stop=stop)
             elif start is not None and stop is not None:
                 regex_query = self.regex_storage(yamlnext=True, start=start, stop=stop)
-
             compiled_regex = re.compile(regex_query, re.MULTILINE)
-
             dstFoundRegex = re.findall(compiled_regex, dstfile[sectionorvdom][0])
             srcFoundRegex = re.findall(compiled_regex, srcfile[sectionorvdom][0])
-
             replacement_results = None
             if wipe:
                 wipe_string = f"{start}\n{stop}"
@@ -158,7 +151,6 @@ class Parser:
 
             if self.swapheaders:
                 newfile["header"] = self.vdoms_dict_results["srcfile"]["header"]
-
         self.vdoms_dict_results.update({"newfile": newfile})
 
     def run_parse(self):
