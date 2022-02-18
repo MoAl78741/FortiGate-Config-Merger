@@ -53,7 +53,7 @@ Capture: #Add FGT config context sections below
     Start: config system link-monitor
     Stop: end
     Wipe: y
-    SectionOrVdom: untrust
+    SectionOrVdom: public
   -
     Start: config router static
     Stop: end
