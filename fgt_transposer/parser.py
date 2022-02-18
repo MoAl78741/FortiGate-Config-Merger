@@ -66,9 +66,11 @@ class Parser:
             return r"(?s)(?<=)" + start + "$.+?" + stop + "$"
 
     def update_results_dictionary(self, filename, dictdata):
+        """Updates vdoms_dict_results dictionary"""
         self.vdoms_dict_results[filename].update(dictdata)
 
     def grab_regex_value(self, parameter, filedata, full_vdom_name=None):
+        """Returns regex findall results"""
         if full_vdom_name:
             parameter = {parameter: True, "full_vdom_name": full_vdom_name}
         else:
