@@ -5,7 +5,7 @@ Merges specific sections of one FortiGate config file into another FortiGate con
 
 ## Purpose
 
-This can be useful tool for adapting prod configs to a lab environment for testing.
+This can be a useful tool for adapting prod configs to a lab environment for testing.
 
 ## What the app does:
 
